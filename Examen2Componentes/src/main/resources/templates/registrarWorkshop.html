@@ -1,0 +1,47 @@
+<!doctype html>
+<html lang="en-US" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="utf-8"></meta>
+    <meta content="text/html" http-equiv="Content-Type"></meta>
+    <title>Registro Workshop</title>
+</head>
+
+<body>
+<div>
+    <h1>Registro Workshop</h1>
+    <form action="#" method="post" th:action="@{/registrarWorkshop/{id}(id=${workshop.id})}" id="formWorkshop">
+        <label for="nombre">Nombre Workshop</label>
+        <input id="nombre" th:field="*{workshop.nombreWorkshop}" type="text"/>
+
+        <label for="autor">Autor</label><!--Drop-->
+        <select class="dropdown-content" id="autor" name="autor" th:field="*{workshop.autor}">
+            <option value="pepe">Pepe</option>
+            <option value="paco">Paco</option>
+            <option value="pedro">Pedro</option>
+            <option value="lovecraft">Lovecraft</option>
+            <option value="jKRowling">JKRowling</option>
+            <option value="tolkien">Tolkien</option>
+        </select>
+
+        <label for="objetivo">Objetivo</label>
+        <input id="objetivo" th:field="*{workshop.objetivo}" type="text"/>
+
+        <label for="categoria">Categoria</label><!--Drop-->
+        <select class="dropdown-content" id="categoria" name="categoria" th:field="*{workshop.categoria}">
+            <option th:each="categoria : ${categorias}" th:text="${categoria.nombreCategoria}"
+                    th:value="${categoria.nombreCategoria}"/>
+        </select>
+
+        <label>Palabras Clave</label>
+        <input id="palabraClave1" th:field="*{workshop.palabrasClave[0]}" type="text" name="palabraClave"/>
+        <input id="palabraClave2" th:field="*{workshop.palabrasClave[1]}" type="text" name="palabraClave"/>
+        <input id="palabraClave3" th:field="*{workshop.palabrasClave[2]}" type="text" name="palabraClave"/>
+
+        <br>
+        <button type="submit" id="btnGuardar">Salvar Workshop</button>
+    </form>
+    <li><a href="/">Regresar</a></li>
+
+</div>
+</body>
+</html>

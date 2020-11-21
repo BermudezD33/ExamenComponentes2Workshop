@@ -1,0 +1,35 @@
+<!doctype html>
+<html lang="en-US" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="utf-8"></meta>
+    <meta content="text/html" http-equiv="Content-Type"></meta>
+    <title>Filtro Autor</title>
+    <script type="text/javascript">
+
+
+        function filtrar() {
+            var nombreAutor = document.getElementById("autor");
+            location.href = "/listarWorkshopXAutor/"+ nombreAutor.value;
+        }
+
+    </script>
+</head>
+<body>
+<div>
+    <h1>Filtro Autor</h1>
+    <form action="#" method="get">
+        <label for="autor">Autor</label>
+        <select class="dropdown-content" id="autor" name="autor" th:field="*{workshop.autor}">
+            <option value="pepe">Pepe</option>
+            <option value="paco">Paco</option>
+            <option value="pedro">Pedro</option>
+            <option value="lovecraft">Lovecraft</option>
+            <option value="jKRowling">JKRowling</option>
+            <option value="tolkien">Tolkien</option>
+        </select>
+        <button type="button" id="btnBuscar" onclick="filtrar();">Filtrar Workshop</button>
+    </form>
+    <li><a href="/">Regresar</a></li>
+</div>
+</body>
+</html>

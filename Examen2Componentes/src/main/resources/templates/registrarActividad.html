@@ -1,0 +1,31 @@
+<!doctype html>
+<html lang="en-US" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="utf-8"></meta>
+    <meta content="text/html" http-equiv="Content-Type"></meta>
+    <title>Guardar Actividad</title>
+</head>
+<body>
+<div>
+    <h1>Guardar Actividad</h1>
+    <form action="#" method="post" th:action="@{/registrarWorkshop/{id}/registrarActividad/(id=${workshop.id})}" id="formActividad">
+        <label for="nombreActividad">Nombre Actividad: </label>
+        <input id="nombreActividad" th:field="*{actividad.NombreActividad}" type="text"/>
+
+        <label for="descripcion">Descripcion: </label>
+        <input id="descripcion" th:field="*{actividad.descripcion}" type="text"/>
+
+        <label for="texto">Texto: </label>
+        <input id="texto" th:field="*{actividad.texto}" type="text"/>
+
+        <label for="tiempo">Tiempo: </label>
+        <input id="tiempo" th:field="*{actividad.tiempo}" type="text"/>
+
+        <button type="submit" id="btnGuardar">Agregar actividad</button>
+
+    </form>
+    <li><a href="/listarWorkshop">Regresar</a></li>
+
+</div>
+</body>
+</html>

@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+
+</body>
+</html><!doctype html>
+<html lang="en-US" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="utf-8"></meta>
+    <meta content="text/html" http-equiv="Content-Type"></meta>
+    <title>Filtro Palabra Clave</title>
+    <script type="text/javascript">
+
+        function filtrar() {
+            var palabraClave = document.getElementById("palabraClave");
+            location.href = "/listarWorkshopXKey/"+ palabraClave.value;
+        }
+
+    </script>
+</head>
+<body>
+<div>
+    <h1>Filtro Categoria</h1>
+    <form action="#" method="get">
+        <label>Palabra Clave: </label>
+        <input id="palabraClave" th:field="*{workshop.palabrasClave}" type="text" name="palabraClave"/>
+        <button type="button" id="btnBuscar" onclick="filtrar();">Filtrar Workshop</button>
+    </form>
+    <li><a href="/">Regresar</a></li>
+</div>
+</body>
+</html>

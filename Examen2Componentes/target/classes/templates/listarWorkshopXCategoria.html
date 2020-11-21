@@ -1,0 +1,42 @@
+<!doctype html>
+<html lang="en-US" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="utf-8"></meta>
+    <meta content="text/html" http-equiv="Content-Type"></meta>
+    <title>Lista Workshops</title>
+</head>
+<body>
+<div>
+    <h1>Lista de Workshops por Categoria</h1>
+    <ul>
+        <div th:each="entry : ${workshop}">
+            <li>
+                <h4>
+                    <label for="nombre"> Nombre: </label>
+                    <span th:text="${entry.nombreWorkshop}" id="nombre"></span>
+                    <label for="autor">, Autor: </label>
+                    <span th:text="${entry.autor}" id="autor"></span>
+                    <label for="Objetivo">, Objetivo: </label>
+                    <span th:text="${entry.objetivo}" id="Objetivo">Objetivo</span>
+                    <label for="categoria">, Categoria: </label>
+                    <span th:text="${entry.categoria}" id="categoria"></span>
+                    <label for="palabrasClave">, Palabras Clave: </label>
+                    <span th:text="${entry.palabrasClave}" id="palabrasClave"></span>
+                    <label for="listaActividades">, Lista de actividades: </label>
+                    <span th:text="${entry.listaActividades.toString()}" id="listaActividades"></span>
+                    <label for="tiempoDuracion">, Tiempo de duracion: </label>
+                    <span th:text="${entry.tiempoDuracion}" id="tiempoDuracion"></span>
+
+
+                    <a th:href="@{/registrarWorkshop/{id}(id=${entry.id})}">Editar</a>
+                    <a th:href="@{/registrarWorkshop/{id}/registrarActividad/(id=${entry.id})}">Agregar Actividades</a>
+
+                </h4>
+            </li>
+        </div>
+    </ul>
+    <li><a href="/filtroCategoria">Regresar</a></li>
+
+</div>
+</body>
+</html>

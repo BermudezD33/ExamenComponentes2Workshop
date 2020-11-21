@@ -1,0 +1,20 @@
+<!doctype html>
+<html lang="en-US" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="utf-8"></meta>
+    <meta content="text/html" http-equiv="Content-Type"></meta>
+    <title>Registro Categoria</title>
+</head>
+<body>
+<div>
+    <h1>Registro Categoria</h1>
+    <form action="#" method="post" th:action="@{/registrarCategoria}" th:object="${categoria}">
+        <label for="nombre">Nombre Categoria: </label>
+        <input id="nombre" th:field="*{nombreCategoria}" type="text"/>
+        <button type="submit" id="btnGuardar">Agregar Categoria</button>
+    </form>
+    <li><a href="/">Regresar</a></li>
+
+</div>
+</body>
+</html>
